@@ -1,21 +1,18 @@
-<h1>Список продуктов</h1>
+<div class="product_header">
+  <h1> YOUR PRODUCTS <h1>
+</div>
+<hr/>
+<% @products.each do |product| %>
+  <div class = "product_image-container">
+    <p><%= product.name %></p> 
+     <br/>
+  <%= link_to "Show Product", product_path(product), class: "product_show-btn" %>
+     </div>
+<% end %>
+<br/>
+<%= link_to "Create Product", products_new_path, class: "product_create-btn" %>
+<br/>
+<br/>
+<%= link_to "Back to profile", root_path %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Название</th>
-      <th>Описание</th>
-      <th>Цена</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.price %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>

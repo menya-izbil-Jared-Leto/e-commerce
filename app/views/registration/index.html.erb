@@ -10,7 +10,11 @@
     <p> Email: <%= current_user.email %> </p>
     <p> First name: <%= current_user.first_name %> </p>
     <p> Last name: <%= current_user.last_name %> </p>
+    <p> Role: <%= current_user.role %> </p>
     <% end %>
     
     <%= link_to "Edit Account", edit_user_registration_path, class:"edit"%>
+
+    <%= link_to "My Products", products_path() %> 
+
 </body>
