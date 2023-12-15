@@ -6,8 +6,18 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
+  resources :carts, only: [:create, :index, :destroy]
+  post 'buy', to: 'carts#buy'
+
+  resources :purchases, only: [:show, :index]
+
+  resources :all_products
+  get 'all_products/index'
+
   resources :products
   get 'products/index'
+  get 'products/detail'
+  get 'products/all'
   get 'products/show'
   get 'products/new'
   get 'products/create'

@@ -2,12 +2,12 @@
   <h1> YOUR PRODUCTS <h1>
 </div>
 <hr/>
-<% @products.each do |product| %>
+<% current_user.products.each do |product| %>
   <div class = "product_image-container">
     <p><%= product.name %></p> 
-     <br/>
   <%= link_to "Show Product", product_path(product), class: "product_show-btn" %>
      </div>
+     <br/>
 <% end %>
 <br/>
 <%= link_to "Create Product", products_new_path, class: "product_create-btn" %>
