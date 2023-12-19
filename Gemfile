@@ -10,6 +10,8 @@ gem "pg", "~> 1.1"
 
 gem "puma", ">= 5.0"
 
+gem "pundit"
+
 gem "importmap-rails"
 
 gem "turbo-rails"
@@ -23,6 +25,12 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
 gem 'devise', '~> 4.9', '>= 4.9.3'
+
+#gem 'bootstrap', '~> 5.1'
+
+#gem 'jquery-rails', '~> 4.4'
+
+#gem 'sass-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

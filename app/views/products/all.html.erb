@@ -1,0 +1,11 @@
+<div class="product_header">
+  <h1> PRODUCTS <h1>
+</div>
+<hr/>
+<% @products.each do |product| %>
+  <div class = "product_image-container">
+    <p><%= product.name %></p> 
+     <br/>
+  <%=# link_to "Show Product", product_path(product), class: "product_show-btn" %>
+     </div>
+<% end %>

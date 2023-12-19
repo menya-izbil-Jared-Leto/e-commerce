@@ -1,0 +1,7 @@
+<h1>Your Purchases</h1>
+
+<% @purchases.each do |purchase| %>
+  <div>
+    <p><%= purchase.product.name %></p> 
+  </div>
+<% end %>

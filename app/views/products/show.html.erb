@@ -1,0 +1,41 @@
+<div class="product_header">
+<h1 >PRODUCT</h1>
+</div>
+<hr/>
+    <div class = "product">
+        <div class= "product_text">
+            <div class = "product_name">
+                <h2>NAME</h2>
+                <p><%= @product.name %></p>
+                <hr/>
+            </div>
+            <div class="product_description">
+                <h2>DESCRIPTION</h2>
+                <p><%= @product.description %></p>
+                <hr/>
+            </div>
+            <div class="product_price">
+                <h2>PRICE</h2>
+                <p><%= @product.price %></p>
+                <hr/>
+            </div>
+        </div>
+    </div>
+
+    <% if current_user.id == @product.user_id %>
+        <%= link_to "Edit Product", edit_product_path, class: "product_edit" %>
+        <%= link_to 'Back', products_path, style: "back_btn" %>
+    <% else %>
+        <% if @product.sold == true%>
+            <p> SOLD </p>
+        <% else %>
+            <%= button_to "Add to Cart", carts_path(product_id: @product.id), method: :post %>
+        <% end %>
+        <%= link_to 'Back', all_products_path(), style: "back_btn" %>
+    <% end %> 
+<br/>
+
+
+    
+    
+  
